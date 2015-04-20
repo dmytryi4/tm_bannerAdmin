@@ -4,7 +4,7 @@
 				<br id="tab2">
 				<a href="#tab1">Create Banner</a><a href="#tab2">All Banners</a>
 			<div class="tab">
-
+				
 				<div id="generate"></div>
 				<form method="POST" name="form" id="addAttrForm" action="">
 					<textarea id="gencode" class="input"><?php Model_admin::generate();?></textarea>

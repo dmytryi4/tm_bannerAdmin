@@ -3,39 +3,39 @@ class Controller_Index Extends Controller_Base {
 	
 	public $layouts = "template";
 	//создаем action
-	function index() {
+	public function index() {
 		$this->template->view('index');
 	}
 
-	function templates() {
+	public function templates() {
 		$this->template->view('templates');
 	}
 
-	function search() {
+	public function search() {
 		$this->template->view('search');
 	}
 
-	function category() {
+	public function category() {
 		$this->template->view('category');
 	}
 
-	function contact() {
+	public function contact() {
 		$this->template->view('contact');
 	}
 
-	function login() {
+	public function login() {
 		$this->template->view('login');
 		$model = new Model_Users();
 		$userInfo = $model->getUser();
 	}
 
-	function logout() {
+	public function logout() {
 		Session::init();
 		Session::destroy();
 	  	header('Location:/login');
 	}
 	
-	function admin() {
+	public function admin() {
 		$model = new Model_Admin();
 		$check= $model->checkSession();
 	
@@ -46,19 +46,19 @@ class Controller_Index Extends Controller_Base {
 		$this->template->view('admin');
 	}
 
-	function editform() {
+	public function editform() {
 		$model = new Model_Admin();
 		$editform= $model->get_edit_banner_form();
 		$this->template->vars('banner', $editform);
 		$this->template->view('edit');
 	}
 
-	function update() {
+	public function update() {
 		$model = new Model_Admin();
 		$update= $model->update_item();
 	}
 
-	function delete() {
+	public function delete() {
 		$model = new Model_Admin();
 		$delete= $model->delete_item();
 	}

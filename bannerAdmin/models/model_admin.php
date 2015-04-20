@@ -14,9 +14,10 @@ Class Model_Admin {
 	//генерирование кода для вставки
 	public static function generate() {
 
-		echo htmlspecialchars('<iframe id="banner" src="" width="0" height="0" style="display: none;"></iframe>')."<br>";
-		echo htmlspecialchars('<script type="text/javascript">')."<br>";
-		echo "var author = ".Session::get('id').";<br>";
+		echo htmlspecialchars('<iframe id="banner" src="" width="0" height="0" style="display: none;"></iframe>');
+		echo "\n".htmlspecialchars('<script type="text/javascript">');
+		echo "\n\t var author = ".Session::get('id').";";
+		echo "\n\tgetBanner(author, url);\n";
 		echo htmlspecialchars('</script>');
 	}
 

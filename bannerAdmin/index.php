@@ -3,7 +3,7 @@
 error_reporting (E_ALL); 
 // подключаем конфиг
 include ('/config.php');
-include('classes/Session.php'); 
+include('classes/session.php'); 
 
 // подключаем ядро сайта
 include (SITE_PATH . DS . 'core' . DS . 'core.php'); 
